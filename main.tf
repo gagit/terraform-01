@@ -1,15 +1,15 @@
 provider "aws" {
-  version = "~> 2.7"
-  region  = "us-east-1"
+  version = "3.48.0"
+  region  = "us-east-2"
 }
 
 resource "aws_instance" "web" {  
-  ami = "ami-0ac80df6eff0e70b5"
+  ami = "ami-00399ec92321828f5"
   instance_type = "t2.micro"
   
-  // tags = {
-  //   Name = "devops-one"
-  // }
+   tags = {
+     Name = "ubuntu2004instance"
+   }
 }
 
 output "public_ip" {
