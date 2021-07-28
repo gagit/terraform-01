@@ -1,6 +1,19 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.48.0"
+    }
+  }
+}
+
+variable "aws_region" {
+  default="us-east-2"
+}
+
+
 provider "aws" {
-  version = "3.48.0"
-  region  = "us-east-2"
+  region  = var.aws_region
 }
 
 resource "aws_instance" "web" {  
