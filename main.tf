@@ -1,4 +1,5 @@
 terraform {
+<<<<<<< HEAD
   required_providers{
     /*
     docker = {
@@ -9,12 +10,28 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 3.27"
+=======
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.48.0"
+>>>>>>> de5d70a7fe08212706979cdfa22948fb62826c68
     }
   }
 }
 
+<<<<<<< HEAD
 provider "aws" {
   region  = "us-east-2"
+=======
+variable "aws_region" {
+  default="us-east-2"
+}
+
+
+provider "aws" {
+  region  = var.aws_region
+>>>>>>> de5d70a7fe08212706979cdfa22948fb62826c68
 }
 
 resource "aws_instance" "web" {  
