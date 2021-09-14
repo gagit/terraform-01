@@ -44,27 +44,26 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_security_group" "allow-ssh-all-test" {
-name = "allow-ssh-all-test"
-vpc_id = data.aws_vpc.selected.id
-ingress {
-    cidr_blocks = [
-      "0.0.0.0/0"
-    ]
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-  }
+  name = "allow-ssh-all-test"
+  vpc_id = data.aws_vpc.selected.id
+  ingress {
+      cidr_blocks = [
+        "0.0.0.0/0"
+      ]
+      from_port = 22
+      to_port = 22
+      protocol = "tcp"
+    }
 
   egress {
-   from_port = 0
-   to_port = 0
-   protocol = "-1"
-   cidr_blocks = ["0.0.0.0/0"]
- }
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    }
 }
 
-
-resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
-  public_key = "ssh-rsa AJ+m3KgVA/YxHhOqHp9H6g/KgADlYXqSVQz7f0TWgb"
-}
+# resource "aws_key_pair" "deployer" {
+#   key_name   = "deployer-key"
+#   public_key = "ssh-rsa AJ+m3KgVA/YxHhOqHp9H6g/KgADlYXqSVQz7f0TWgb"
+# }
