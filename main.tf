@@ -63,7 +63,3 @@ resource "aws_security_group" "allow-ssh-all-test" {
     }
 }
 
-# resource "aws_key_pair" "deployer" {
-#   key_name   = "deployer-key"
-#   public_key = "ssh-rsa AJ+m3KgVA/YxHhOqHp9H6g/KgADlYXqSVQz7f0TWgb"
-# }
